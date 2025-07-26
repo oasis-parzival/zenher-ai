@@ -1,0 +1,231 @@
+/* Enhanced styles for citation system */
+
+/* References section styling */
+.references-section {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(138, 79, 255, 0.2);
+    font-size: 13px;
+}
+
+.references-title {
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.references-list {
+    margin: 0;
+    padding-left: 18px;
+    list-style-type: decimal;
+}
+
+.reference-item {
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.reference-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    word-break: break-word;
+}
+
+.reference-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.reference-link:visited {
+    color: #8a4fff;
+}
+
+/* Citation inline styles */
+.citation {
+    display: inline;
+    background: var(--primary-color);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 2px;
+    text-decoration: none;
+    vertical-align: super;
+    line-height: 1;
+}
+
+.citation:hover {
+    background: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+}
+
+/* Message text formatting */
+.message-text {
+    line-height: 1.5;
+}
+
+.message-text strong {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.message-text em {
+    font-style: italic;
+    color: var(--light-text);
+}
+
+/* Enhanced bot message styling */
+.bot-message .message-content {
+    background: var(--light-purple);
+    border-bottom-left-radius: clamp(4px, 1vw, 8px);
+    box-shadow: 0 2px 8px rgba(138, 79, 255, 0.1);
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Disclaimer styling */
+.disclaimer {
+    margin-top: 12px;
+    padding: 10px;
+    background: rgba(233, 76, 175, 0.1);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--light-text);
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Source verification badge */
+.source-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-left: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Enhanced typing indicator */
+.typing-dots {
+    display: flex;
+    gap: clamp(3px, 1vw, 5px);
+    padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px);
+    align-items: center;
+}
+
+.typing-dots span {
+    width: clamp(8px, 2vw, 12px);
+    height: clamp(8px, 2vw, 12px);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.6;
+    animation: typing-dot 1.4s infinite ease-in-out both;
+    box-shadow: 0 2px 4px rgba(138, 79, 255, 0.3);
+}
+
+.typing-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes typing-dot {
+    0%, 80%, 100% { 
+        transform: scale(0.6);
+        opacity: 0.4;
+    }
+    40% { 
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments for citations */
+@media screen and (max-width: 480px) {
+    .references-section {
+        font-size: 12px;
+        margin-top: 12px;
+        padding-top: 10px;
+    }
+    
+    .references-list {
+        padding-left: 16px;
+    }
+    
+    .reference-item {
+        margin-bottom: 5px;
+    }
+    
+    .citation {
+        font-size: 10px;
+        padding: 1px 4px;
+    }
+}
+
+/* Trust indicator for WHO sources */
+.who-verified {
+    position: relative;
+}
+
+.who-verified::after {
+    content: "✓ WHO";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #00a651;
+    color: white;
+    font-size: 8px;
+    padding: 2px 4px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Loading state for real-time information retrieval */
+.loading-sources {
+    display: inline-block;
+    margin-left: 8px;
+    opacity: 0.7;
+}
+
+.loading-sources::after {
+    content: "Verifying sources...";
+    font-size: 11px;
+    color: var(--light-text);
+    font-style: italic;
+}
+
+/* Enhanced error handling styles */
+.error-message {
+    background: rgba(255, 107, 107, 0.1);
+    border-left: 3px solid #ff6b6b;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.error-message .error-title {
+    font-weight: 600;
+    color: #ff6b6b;
+    margin-bottom: 4px;
+}
+
+.error-message .error-text {
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+/* Source priority indicators */
+.source-priority-1 { border-left-color: #00a651; } /* WHO - Green */
+.source-priority-2 { border-left-color: #0066cc; } /* CDC - Blue */
+.source-priority-3 { border-left-color: #ff8c00; } /* NIH - Orange */
+.source-priority-4 { border-left-color: #8b4513; } /* Mayo Clinic - Brown */
+.source-priority-5 { border-left-color: #4b0082; } /* NHS - Indigo */
